@@ -58,6 +58,8 @@ class Circle():
             c2.xVel = -c2.xVel
             c2.yVel = -c2.yVel
 
+            print(f"""Collision detected!""")
+
 clock = pygame.time.Clock()
 circle1 = Circle(radius1, window, x1, y1, xVel1, yVel1, COLOR1)
 circle2 = Circle(radius2, window, x2, y2, xVel2, yVel2, COLOR2)
