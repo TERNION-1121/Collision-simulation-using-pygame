@@ -34,7 +34,7 @@ class Circle():
 
     def drawCircle(self, win):
         pygame.draw.circle(win, self.color, (self.x, self.y), self.radius)
-        pygame.display.update()
+        # pygame.display.update()
 
     def moveCircle(self, win):
         self.x += self.xVel
@@ -53,10 +53,10 @@ class Circle():
         distance = round((length**2 + breadth**2)**0.5)
 
         if distance <= c1.radius + c2.radius:
-            c1.xVel = -c1.xVel
-            c1.yVel = -c1.yVel
-            c2.xVel = -c2.xVel
-            c2.yVel = -c2.yVel
+            c1.xVel = -c1.xVel  # You can use the equation of collision here
+            c1.yVel = -c1.yVel  # You can use the equation of collision here
+            c2.xVel = -c2.xVel  # You can use the equation of collision here
+            c2.yVel = -c2.yVel  # You can use the equation of collision here
 
             print(f"""Collision detected!""")
 
@@ -70,8 +70,9 @@ while True:
             pygame.quit()
             exit()
 
+    circle2.moveCircle(window)
+    circle1.moveCircle(window)
     circle1.drawCircle(window)
     circle2.drawCircle(window)
-    circle1.moveCircle(window)
-    circle2.moveCircle(window)
+    pygame.display.update() #update the screen after blitting all the sprites
     Circle.checkCollision(circle1, circle2, window)
